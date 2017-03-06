@@ -13,14 +13,14 @@
 
 ##Régimen de cursada
 
-  Tema                                                          TL
- ------------------------------------------------------   ------------
- Diodos                                                        TL1
- Amplificador Operacional Real                                 TL1
- Amplificadores Monoetapa                                      TL2
- Amplificadores Multietapa <- *en frecuencias medias*          TL2
- PARCIAL
- Respuesta en frecuencias                                      TL3
- Fuentes de corriente y carga activa
- TL4 --> Diseño Analógico
+|  Tema                                                   |       TL    | 
+| ------------------------------------------------------  | ------------|  
+| Diodos                                                  |      TL1    |   
+| Amplificador Operacional Real                           |      TL1    |  
+| Amplificadores Monoetapa                                |      TL2    |   
+| Amplificadores Multietapa <- *en frecuencias medias*    |      TL2    |  
+| PARCIAL                                                 |             |  
+| Respuesta en frecuencias                                |      TL3    |    
+| Fuentes de corriente y carga activa                     |             |
+| TL4 --> Diseño Analógico                                |             |     
 
