@@ -23,4 +23,7 @@
 | Respuesta en frecuencias                                |      TL3    |    
 | Fuentes de corriente y carga activa                     |             |
 | TL4 --> Diseño Analógico                                |             |     
+## Links útiles
+
+* [Simple template pandoc - by pietrodn](https://github.com/pietrodn/pandoc-templates)
 
