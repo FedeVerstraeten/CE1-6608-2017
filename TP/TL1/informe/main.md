@@ -1,31 +1,58 @@
+*Objetivo: Presentar a través de mediciones en laboratorio, la utilización de circuitos integrados analógicos y componentes asociados para la realización de distintas funciones. Observar las limitaciones que presenta el uso de los modelos representativos del funcionamiento de dichos circuitos integrados para predecir su comportamiento, como así también la influencia de las características del instrumental utilizado en la medición, en los valores obtenidos.*
+
 #A) Amplificador de tensión o multiplicador por una constante
 
-##1. Tensión pico de salida y su forma de variación temporal
+Se comienza el trabajo con la medición de un amplificador en configuración de multiplicador por una constante. Según el caso ideal se espera que $v_o=-R_2/R_1 . v_i$. 
+
+
+
+
+
+
+
+
+
+
+##1.  
+
 ###a)	$R_1 = 1K\Omega$ y $R_2 = 10 K\Omega$
 		
 \hfill
 
-$\hat{V}_o =$
+El calculo teórico nos da que $v_o/v_i=-10$
+
+####Simulación
+
+![Circuito a simular](img/Csim1a.png)
+
+![Resultado de la simulación](img/Sim1a.png)
 
 \hfill
-\hfill
 
-*{sacar foto de la forma de onda}*
+En la simulación se ve una salida similar a lo previsto por el modelo ideal. Con una señal de salida 10 veces mayor a la señal de entrada.
 
-\hfill
-\hfill
-\hfill
-
-Reemplazar $R_L$ por una resistencia de $10\Omega$
-
-*{sacar foto de la forma de onda}
+#### Medición
 
 \hfill
+
+![Medición 1a](img/1a.jpeg)
+
+con $$\hat{V}_i = 0.2V$$
+
+medimos $$\hat{V}_o = 2V$$
+
+que es consistente con los simulado.
+
 \hfill
+
+*Reemplazar $R_L$ por una resistencia de $10\Omega$*
+
+![Resultado de la simulación](img/Sim1a10.png)
+
+En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella $25mA$ lo cual coincide con $I_CS$. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.
 
 ###b)  $R_1 = 1M\Omega$ y $R_2 = 10 M\Omega$
         
-\hfill
 \hfill
 
 $\hat{V}_o =$
