@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <title></title>
+  <style type="text/css">code{white-space: pre;}</style>
+  % header things...
+</head>
+<body>
+<p><em>Objetivo: Presentar a través de mediciones en laboratorio, la utilización de circuitos integrados analógicos y componentes asociados para la realización de distintas funciones. Observar las limitaciones que presenta el uso de los modelos representativos del funcionamiento de dichos circuitos integrados para predecir su comportamiento, como así también la influencia de las características del instrumental utilizado en la medición, en los valores obtenidos.</em></p>
+<h1 id="a-amplificador-de-tensión-o-multiplicador-por-una-constante">A) Amplificador de tensión o multiplicador por una constante</h1>
+<p>Se comienza el trabajo con la medición de un amplificador en configuración de multiplicador por una constante. Según el caso ideal se espera que <span class="math inline"><em>v</em><sub><em>o</em></sub> = −<em>R</em><sub>2</sub>/<em>R</em><sub>1</sub>.<em>v</em><sub><em>i</em></sub></span>.</p>
+<h2 id="section">1.</h2>
+<h3 id="a-r_1-1komega-y-r_2-10-komega">a) <span class="math inline"><em>R</em><sub>1</sub> = 1<em>K</em><em>Ω</em></span> y <span class="math inline"><em>R</em><sub>2</sub> = 10<em>K</em><em>Ω</em></span></h3>
+
+<p>El calculo teórico nos da que <span class="math inline"><em>v</em><sub><em>o</em></sub>/<em>v</em><sub><em>i</em></sub> = −10</span></p>
+<h4 id="simulación">Simulación</h4>
+<div class="figure">
+<img src="img/CsimA1.png" alt="Circuito a simular" />
+<p class="caption">Circuito a simular</p>
+</div>
+<div class="figure">
+<img src="img/SimA1a.png" alt="Resultado de la simulaciónA1a" />
+<p class="caption">Resultado de la simulaciónA1a</p>
+</div>
+
+<p>En la simulación se ve una salida similar a lo previsto por el modelo ideal. Con una señal de salida 10 veces mayor a la señal de entrada.</p>
+<h4 id="medición">Medición</h4>
+
+<div class="figure">
+<img src="img/A1a.jpeg" alt="Medición A1a" />
+<p class="caption">Medición A1a</p>
+</div>
+<p>con <span class="math inline">$\hat{V}_i = 0.2V$</span></p>
+<p>medimos <span class="math inline">$\hat{V}_o = 2V$</span></p>
+<p>que es consistente con los simulado.</p>
+
+<p><em>Reemplazar <span class="math inline"><em>R</em><sub><em>L</em></sub></span> por una resistencia de <span class="math inline">10<em>Ω</em></span></em></p>
+<div class="figure">
+<img src="img/SimA110.png" alt="Resultado de la simulación" />
+<p class="caption">Resultado de la simulación</p>
+</div>
+<p>En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella <span class="math inline">25<em>m</em><em>A</em></span> lo cual coincide con <span class="math inline"><em>I</em><sub><em>C</em></sub><em>S</em></span>. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.</p>
+<h3 id="b-r_1-1momega-y-r_2-10-momega">b) <span class="math inline"><em>R</em><sub>1</sub> = 1<em>M</em><em>Ω</em></span> y <span class="math inline"><em>R</em><sub>2</sub> = 10<em>M</em><em>Ω</em></span></h3>
+<p>Al simular esta señal el software reportó errores de convergencia.</p>
+<h4 id="medición-1">Medición</h4>
+
+<p><span class="math inline">$\hat{V}_o = 2V$</span></p>
+<div class="figure">
+<img src="img/A1b.jpeg" alt="Medición A1b" />
+<p class="caption">Medición A1b</p>
+</div>
+<div class="figure">
+<img src="img/A1bb.jpeg" alt="Medición de la señal de ruido" />
+<p class="caption">Medición de la señal de ruido</p>
+</div>
+<p>Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de ruido de 50Hz. Se especula que esto se debe a que al haber resistencias tan altas a la entrada(comparables con los <span class="math inline">2<em>M</em><em>Ω</em></span> de entrada) cualquier fuente de ruido electromagnético se ve amplificada.</p>
+<h3 id="c-r_1-1komega-y-r_2-1momega">c) <span class="math inline"><em>R</em><sub>1</sub> = 1<em>K</em><em>Ω</em></span> y <span class="math inline"><em>R</em><sub>2</sub> = 1<em>M</em><em>Ω</em></span></h3>
+
+<div class="figure">
+<img src="img/SimA1c.png" alt="Resultado de la simulación A1c" />
+<p class="caption">Resultado de la simulación A1c</p>
+</div>
+<div class="figure">
+<img src="img/A1c.png" alt="Medición A1c" />
+<p class="caption">Medición A1c</p>
+</div>
+<p>Se ve en este caso que la señal recorta por amplitud dado que las fuentes entregan sólo hasta <span class="math inline">±12<em>V</em></span>.</p>
+<p><span class="math inline">$\hat{V}_o =10.55V$</span></p>
+<h2 id="respuesta-en-frecuencia">2. Respuesta en frecuencia</h2>
+<h3 id="simulación-1">Simulación:</h3>
+<div class="figure">
+<img src="img/SimA2.png" alt="Simulación de la respuesta en frecuencia" />
+<p class="caption">Simulación de la respuesta en frecuencia</p>
+</div>
+<h3 id="medición-2">Medición</h3>
+<p>Valor de tensión pico en vacío: <span class="math inline">52<em>m</em><em>V</em></span> (<span class="math inline"><em>R</em><sub>1</sub> = 1<em>K</em><em>Ω</em></span>, <span class="math inline"><em>R</em><sub>2</sub> = 10<em>K</em><em>Ω</em></span> y punta 10X).</p>
+<table>
+<thead>
+<tr class="header">
+<th>f(Hz)</th>
+<th><span class="math inline">$\hat{V}_O$</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>520mV</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>520mV</td>
+</tr>
+<tr class="odd">
+<td>100</td>
+<td>520mV</td>
+</tr>
+<tr class="even">
+<td>1K</td>
+<td>520mV</td>
+</tr>
+<tr class="odd">
+<td>10K</td>
+<td>520mV</td>
+</tr>
+<tr class="even">
+<td>20K</td>
+<td>520mV</td>
+</tr>
+<tr class="odd">
+<td>50K</td>
+<td>500mV</td>
+</tr>
+<tr class="even">
+<td>94K</td>
+<td>368mV(<span class="math inline"><em>V</em><sub><em>c</em></sub></span>)</td>
+</tr>
+<tr class="odd">
+<td>100K</td>
+<td>348mV</td>
+</tr>
+<tr class="even">
+<td>200K</td>
+<td>188mV</td>
+</tr>
+<tr class="odd">
+<td>500K</td>
+<td>80mV</td>
+</tr>
+<tr class="even">
+<td>1M</td>
+<td>48mV</td>
+</tr>
+<tr class="odd">
+<td>2M</td>
+<td>20mV</td>
+</tr>
+<tr class="even">
+<td>5M</td>
+<td>4mV</td>
+</tr>
+<tr class="odd">
+<td>10Meg</td>
+<td>1mV</td>
+</tr>
+</tbody>
+</table>
+<div class="figure">
+<img src="img/plotdefrecuencias.png" alt="Amplificación de tensión en función de la frecuencia" />
+<p class="caption">Amplificación de tensión en función de la frecuencia</p>
+</div>
+<p>Donde se ve que <span class="math inline"><em>f</em><sub><em>c</em></sub> = 94<em>K</em><em>H</em><em>z</em></span></p>
+<p>Luego se pide ver qué pasa con <span class="math inline"><em>V</em><sub><em>i</em></sub> = 0, 4<em>V</em></span> a 10Khz.</p>
+<div class="figure">
+<img src="img/SimA2b.png" alt="Simulación de la forma de onda distorcionada" />
+<p class="caption">Simulación de la forma de onda distorcionada</p>
+</div>
+<div class="figure">
+<img src="img/A2b.jpeg" alt="Medición de la forma de onda distorcionada" />
+<p class="caption">Medición de la forma de onda distorcionada</p>
+</div>
+<p>La explicación que encontramos a la distorción que observamos es que la velocidad de respuesta del amplificador es menor a la velocidad de cambio de la señal. En la hoja de datos se ve el siguiente parámetro: <strong>Slew Rate</strong> <span class="math inline">0.5<em>V</em>/<em>µ</em><em>s</em></span></p>
+<h1 id="b-circuito-integrador">B) Circuito Integrador</h1>
+<p>señal de entrada cuadrada de <span class="math inline"><em>f</em> = 1/10<em>R</em><em>C</em> = 1<em>k</em><em>H</em><em>z</em></span> de A=0,2V, con <span class="math inline"><em>R</em><sub>1</sub> = 1<em>K</em><em>Ω</em></span> y <span class="math inline"><em>C</em><sub>1</sub> = 100<em>n</em><em>F</em></span></p>
+<h2 id="simulación-2">Simulación</h2>
+<div class="figure">
+<img src="img/SimB.png" alt="Simulación sin R2" />
+<p class="caption">Simulación sin R2</p>
+</div>
+<div class="figure">
+<img src="img/SimB2.png" alt="Simulación con R2" />
+<p class="caption">Simulación con R2</p>
+</div>
+<h1 id="f-circuitos-rectificadores">F) Circuitos Rectificadores</h1>
+<p></p>
+<p><em>{sacar foto de <span class="math inline"><em>v</em><sub><em>o</em></sub>(<em>t</em>)</span>}</em></p>
+<p></p>
+<p><span class="math inline">$\hat{V}_o=$</span></p>
+<p><span class="math inline">$\bar{V}_o=$</span></p>
+<p></p>
+<p>Con un capacitor de 47uF en paralelo y una señal de <span class="math inline"><em>f</em> = 50<em>H</em><em>z</em></span> y A=5V</p>
+<table>
+<thead>
+<tr class="header">
+<th><span class="math inline"><em>R</em><sub><em>L</em></sub>(<em>Ω</em>)</span></th>
+<th><span class="math inline"><em>V</em><sub><em>r</em><em>i</em><em>p</em><em>p</em><em>l</em><em>e</em>(<em>e</em><em>f</em>)</sub></span></th>
+<th><span class="math inline">$\bar{V}_o$</span></th>
+<th>$z% $</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">10<em>K</em></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">4, 7<em>K</em></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">1<em>K</em></span></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
