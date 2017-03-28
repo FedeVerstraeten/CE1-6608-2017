@@ -1,0 +1,12 @@
+* C:\users\fverstra\My Documents\Repository\CE1-6608-2017\TP\TL1\simul\A2.asc
+XU1 0 N001 +v12 -v12 Vo LM741/NS
+R2 Vo N001 10K
+V1 +v12 0 12
+V2 0 -v12 12
+R1 N001 Vi 1K
+V3 Vi 0 AC 52m 0
+.lib LM741.MOD
+;tran 0 0.001 0 1u
+.ac oct 100 1 1meg
+.backanno
+.end
