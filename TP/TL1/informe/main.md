@@ -2,7 +2,7 @@
 
 #A) Amplificador de tensión o multiplicador por una constante
 
-Se comienza el trabajo con la medición de un amplificador en configuración de multiplicador por una constante. Según el caso ideal se espera que $v_o=-R_2/R_1 . v_i$. 
+Se comienza el trabajo con la medición de un amplificador en configuración de multiplicador por una constante. Según el caso ideal se espera que $\displaystyle v_o=\frac{-R_2}{R_1}v_i$. 
 
 
 ##1.  
@@ -11,7 +11,7 @@ Se comienza el trabajo con la medición de un amplificador en configuración de 
 		
 \hfill
 
-El calculo teórico nos da que $v_o/v_i=-10$
+El calculo teórico nos da que $\displaystyle \frac{v_o}{v_i}=-10$
 
 ####Simulación
 
@@ -65,7 +65,7 @@ Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de rui
 
 ![Resultado de la simulación A1c](img/SimA1c.png)
 
-![Medición A1c](img/A1c.png)
+![Medición A1c](img/A1c.jpeg)
 
 Se ve en este caso que la señal recorta por amplitud dado que las fuentes entregan sólo hasta $±12V$.
 
@@ -113,10 +113,14 @@ Luego se pide ver qué pasa con $V_i=0,4V$ a 10Khz.
 
 ![Medición de la forma de onda distorcionada](img/A2b.jpeg)
 
-La explicación que encontramos a la distorción que observamos es que la velocidad de respuesta del amplificador es menor a la velocidad de cambio de la señal. En la hoja de datos se ve el siguiente parámetro: **Slew Rate** $0.5V/µs$
+La explicación que encontramos a la distorción que observamos es que la velocidad de respuesta del amplificador es menor a la velocidad de cambio de la señal. En la hoja de datos se ve el parámetro ***Slew Rate*:** $0.5\frac{V}{\mu s}$
+
+
 
 #B) Circuito Integrador
-señal de entrada cuadrada de $f = 1/10RC = 1kHz$ de A=0,2V, con $R_1=1K\Omega$ y $C_1 = 100 nF$
+
+
+Trabajamos con una señal de entrada cuadrada de $\displaystyle f =\frac{1}{10RC} = 1kHz$ de A=0,2V, con $R_1=1K\Omega$ y $C_1 = 100 nF$
 
 ##Simulación
 
@@ -124,7 +128,9 @@ señal de entrada cuadrada de $f = 1/10RC = 1kHz$ de A=0,2V, con $R_1=1K\Omega$ 
 
 ![Simulación con R2](img/SimB2.png)
 
+##Medición
 
+![Medición B](img/B)
 
 
 #F) Circuitos Rectificadores
