@@ -7,7 +7,7 @@ Se comienza el trabajo con la medición de un amplificador en configuración de 
 
 ##1.  
 
-###a)	$R_1 = 1K\Omega$ y $R_2 = 10 K\Omega$
+###a)	$R_1 = 1\;\text{k}\Omega$ y $R_2 = 10 \;\text{k}\Omega$
 		
 \hfill
 
@@ -27,11 +27,12 @@ En la simulación se ve una salida similar a lo previsto por el modelo ideal. Co
 
 \hfill
 
+
 ![Medición A1a](img/A1a.jpeg)
 
-con $$\hat{V}_i = 0.2V$$
+con $$\hat{V}_i = 0,2 \;\text{V}$$
 
-medimos $$\hat{V}_o = 2V$$
+medimos $$\hat{V}_o = 2 \;\text{V}$$
 
 que es consistente con los simulado.
 
@@ -43,7 +44,9 @@ que es consistente con los simulado.
 
 En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella $25mA$ lo cual coincide con $I_CS$. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.
 
-###b)  $R_1 = 1M\Omega$ y $R_2 = 10 M\Omega$
+###b)  $R_1 = 1\;\text{M}\Omega$ y $R_2 = 10\;\text{M}\Omega$
+
+El calculo teórico nos da que $\displaystyle \frac{v_o}{v_i}=-2$
         
 Al simular esta señal el software reportó errores de convergencia.
 
@@ -51,7 +54,7 @@ Al simular esta señal el software reportó errores de convergencia.
 
 \hfill
 
-$\hat{V}_o = 2V$
+$\hat{V}_o = 2\;\text{V}$
 
 ![Medición A1b](img/A1b.jpeg)
 
@@ -59,7 +62,7 @@ $\hat{V}_o = 2V$
 
 Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de ruido de 50Hz. Se especula que esto se debe a que al haber resistencias tan altas a la entrada(comparables con los $2M\Omega$ de entrada) cualquier fuente de ruido electromagnético se ve amplificada.
 
-###c)  $R_1 = 1K\Omega$ y $R_2 = 1M\Omega$
+###c)  $R_1 = 1\;\text{k}\Omega$ y $R_2 = 1\;\text{M}\Omega$
 
 \hfill
 
@@ -69,7 +72,7 @@ Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de rui
 
 Se ve en este caso que la señal recorta por amplitud dado que las fuentes entregan sólo hasta $±12V$.
 
-$\hat{V}_o =10.55V$
+$\hat{V}_o =10.55\;\text{V}$
 
 
 ##2. Respuesta en frecuencia
@@ -80,7 +83,7 @@ $\hat{V}_o =10.55V$
 
 ### Medición
 
-Valor de tensión pico en vacío: $52mV$	($R_1 = 1K\Omega$, $R_2 = 10K\Omega$ y punta 10X).
+Valor de tensión pico en vacío: $52\;\text{mV}$	($R_1 = 1\;\text{k}\Omega$, $R_2 = 10\;\text{k}\Omega$ y punta 10X).
 
 
 |f(Hz)|  $\hat{V}_O$|
@@ -104,10 +107,10 @@ Valor de tensión pico en vacío: $52mV$	($R_1 = 1K\Omega$, $R_2 = 10K\Omega$ y 
 
 ![Amplificación de tensión en función de la frecuencia](img/plotdefrecuencias.png)
 
-Donde se ve que $f_c=94KHz$
+Donde se ve que $f_c=94\;\text{kHz}$
 
 
-Luego se pide ver qué pasa con $V_i=0,4V$ a 10Khz.
+Luego se pide ver qué pasa con $V_i=0,4\;\text{V}$ a 10\;\text{kHz}.
 
 ![Simulación de la forma de onda distorcionada](img/SimA2b.png)
 
@@ -120,7 +123,7 @@ La explicación que encontramos a la distorción que observamos es que la veloci
 #B) Circuito Integrador
 
 
-Trabajamos con una señal de entrada cuadrada de $\displaystyle f =\frac{1}{10RC} = 1kHz$ de A=0,2V, con $R_1=1K\Omega$ y $C_1 = 100 nF$
+Trabajamos con una señal de entrada cuadrada de $\displaystyle f =\frac{1}{10RC} = 1\;\text{kHz}$ de A=0,2\;\text{V}, con $R_1=1\;\text{k}\Omega$ y $C_1 = 100 \;\text{nF}$
 
 ##Simulación
 
