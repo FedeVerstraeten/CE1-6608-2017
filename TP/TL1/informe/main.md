@@ -43,7 +43,7 @@ que es consistente con los simulado.
 
 En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella $\SI{25}{\milli \ampere}$ lo cual coincide con $I_CS$. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.
 
-###b)  $R_1 = 1\;\text{M}\Omega$ y $R_2 = 10\;\text{M}\Omega$
+###b)  $R_1 = \SI{1}{\mega \ohm}$ y $R_2 = \SI{10}{\mega\ohm}$
 
 El calculo teórico nos da que $\displaystyle \frac{v_o}{v_i}=-2$
         
@@ -53,15 +53,15 @@ Al simular esta señal el software reportó errores de convergencia.
 
 \hfill
 
-$\hat{V}_o = 2\;\text{V}$
+$\hat{V}_o = \SI{2}{\volt}$
 
 ![Medición A1b](img/A1b.jpeg)
 
 ![Medición de la señal de ruido](img/A1bb.jpeg)
 
-Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de ruido de 50Hz. Se especula que esto se debe a que al haber resistencias tan altas a la entrada(comparables con los $2M\Omega$ de entrada) cualquier fuente de ruido electromagnético se ve amplificada.
+Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de ruido de $\SI{50}{\hertz}$. Se especula que esto se debe a que al haber resistencias tan altas a la entrada(comparables con los $\SI{2}{\mega\ohm}$ de entrada) cualquier fuente de ruido electromagnético se ve amplificada.
 
-###c)  $R_1 = 1\;\text{k}\Omega$ y $R_2 = 1\;\text{M}\Omega$
+###c)  $R_1 = \SI{1}{\kilo\ohm}$ y $R_2 = \SI{1}{\mega\ohm}$
 
 \hfill
 
@@ -69,9 +69,9 @@ Se vio que la señal medida tiene mucho ruido, incluyendo una gran señal de rui
 
 ![Medición A1c](img/A1c.jpeg)
 
-Se ve en este caso que la señal recorta por amplitud dado que las fuentes entregan sólo hasta $±12V$.
+Se ve en este caso que la señal recorta por amplitud dado que las fuentes entregan sólo hasta $\pm\SI{12}{\volt}$.
 
-$\hat{V}_o =10.55\;\text{V}$
+$\hat{V}_o =\SI{10.55}{\volt}$
 
 
 ##2. Respuesta en frecuencia
@@ -82,47 +82,47 @@ $\hat{V}_o =10.55\;\text{V}$
 
 ### Medición
 
-Valor de tensión pico en vacío: $52\;\text{mV}$	($R_1 = 1\;\text{k}\Omega$, $R_2 = 10\;\text{k}\Omega$ y punta 10X).
+Valor de tensión pico en vacío: $\SI{52}{\milli\volt}$	($R_1 = \SI{1}{\kilo\ohm}$, $R_2 = \SI{10}{\kilo\ohm}$ y punta 10X).
 
 
-|f(Hz)|  $\hat{V}_O$|
-|-----|-------------|
-|    1|        520mV|
-|   10|        520mV|
-|  100|        520mV|
-|   1K|        520mV|
-|  10K|        520mV|
-|  20K|        520mV|
-|  50K|        500mV| 
-|  94K| 368mV($V_c$)|
-| 100K|        348mV|
-| 200K|        188mV|
-| 500K|         80mV|
-|   1M|         48mV|
-|   2M|         20mV|
-|   5M|          4mV|
-|10Meg|          1mV|
+|f                    |                  $\hat{V}_O$|
+|---------------------|-----------------------------|
+|       \SI{1}{\hertz}|        \SI{520}{\milli\volt}|
+|      \SI{10}{\hertz}|        \SI{520}{\milli\volt}|
+|     \SI{100}{\hertz}|        \SI{520}{\milli\volt}|
+|  \SI{1}{\kilo\hertz}|        \SI{520}{\milli\volt}|
+| \SI{10}{\kilo\hertz}|        \SI{520}{\milli\volt}|
+| \SI{20}{\kilo\hertz}|        \SI{520}{\milli\volt}|
+| \SI{50}{\kilo\hertz}|        \SI{500}{\milli\volt}| 
+| \SI{94}{\kilo\hertz}| \SI{368}{\milli\volt}($V_c$)|
+|\SI{100}{\kilo\hertz}|        \SI{348}{\milli\volt}|
+|\SI{200}{\kilo\hertz}|        \SI{188}{\milli\volt}|
+|\SI{500}{\kilo\hertz}|         \SI{80}{\milli\volt}|
+|  \SI{1}{\mega\hertz}|         \SI{48}{\milli\volt}|
+|  \SI{2}{\mega\hertz}|         \SI{20}{\milli\volt}|
+|  \SI{5}{\mega\hertz}|          \SI{4}{\milli\volt}|
+| \SI{10}{\mega\hertz}|          \SI{1}{\milli\volt}|
 
 
 ![Amplificación de tensión en función de la frecuencia](img/plotdefrecuencias.png)
 
-Donde se ve que $f_c=94\;\text{kHz}$
+Donde se ve que $f_c=\SI{94}{\kilo\hertz}$
 
 
-Luego se pide ver qué pasa con $V_i=0,4\;\text{V}$ a 10\;\text{kHz}.
+Luego se pide ver qué pasa con $V_i=\SI{0,4}{\volt}$ a \SI{10}{\kilo\hertz}.
 
 ![Simulación de la forma de onda distorcionada](img/SimA2b.png)
 
 ![Medición de la forma de onda distorcionada](img/A2b.jpeg)
 
-La explicación que encontramos a la distorción que observamos es que la velocidad de respuesta del amplificador es menor a la velocidad de cambio de la señal. En la hoja de datos se ve el parámetro ***Slew Rate*:** $0.5\frac{V}{\mu s}$
+La explicación que encontramos a la distorción que observamos es que la velocidad de respuesta del amplificador es menor a la velocidad de cambio de la señal. En la hoja de datos se ve el parámetro ***Slew Rate*:** $\SI[per-mode=fraction]{0.5}{\volt\per\micro\second}$
 
 
 
 #B) Circuito Integrador
 
 
-Trabajamos con una señal de entrada cuadrada de $\displaystyle f =\frac{1}{10RC} = 1\;\text{kHz}$ de A=0,2\;\text{V}, con $R_1=1\;\text{k}\Omega$ y $C_1 = 100 \;\text{nF}$
+Trabajamos con una señal de entrada cuadrada de $\displaystyle f =\frac{1}{10RC} = \SI{1}{\kilo\hertz}$ de A=\SI{0,2}{\volt}, con $R_1=\SI{1}{\kilo\ohm}$ y $C_1 = \SI{100 }{\nano\farad}$
 
 ##Simulación
 
@@ -152,7 +152,7 @@ $\bar{V}_o=$
 \hfill
 \hfill
 
-Con un capacitor de 47uF en paralelo y una señal de $f=50Hz$ y A=5V
+Con un capacitor de \SI{47}{\micro\farad} en paralelo y una señal de $f=\SI{50}{\hertz}$ y A=\SI{5}{\volt}
 
 |$R_L(\Omega)$ | $V_{ripple(ef)}$ | $\bar{V}_o$ | $z\% $|
 |-|-|-|-|
