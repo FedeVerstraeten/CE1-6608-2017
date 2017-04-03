@@ -5,9 +5,9 @@
 Se comienza el trabajo con la medición de un amplificador en configuración de multiplicador por una constante. Según el caso ideal se espera que $\displaystyle v_o=\frac{-R_2}{R_1}v_i$. 
 
 
-##1.  
+##1. Obtener el valor de la tensión pico de salida del circuito y su forma de variación temporal para una entrada senoidal de $\SI {1}{\kilo\hertz}$ y $V_{i1} = \SI{0,2}{\volt}$, con los siguientes valores de $R_1$, $R_2$ : y $R_L = \SI{1}{\kilo\ohm}$. 
 
-###a)	$R_1 = 1\;\text{k}\Omega$ y $R_2 = 10 \;\text{k}\Omega$
+###a)	$R_1 = \SI{1}{\kilo \ohm}$ y $R_2 = \SI{10}{\kilo \ohm}$
 		
 \hfill
 
@@ -17,7 +17,7 @@ El calculo teórico nos da que $\displaystyle \frac{v_o}{v_i}=-10$
 
 ![Circuito a simular](img/CsimA1.png)
 
-![Resultado de la simulaciónA1a](img/SimA1a.png)
+![Resultado de la simulación A.1a](img/SimA1a.png)
 
 \hfill
 
@@ -27,22 +27,21 @@ En la simulación se ve una salida similar a lo previsto por el modelo ideal. Co
 
 \hfill
 
+![Medición A.1a](img/A1a.jpeg)
 
-![Medición A1a](img/A1a.jpeg)
+con $$\hat{V}_i = \SI{0,2}{\volt}$$
 
-con $$\hat{V}_i = 0,2 \;\text{V}$$
-
-medimos $$\hat{V}_o = 2 \;\text{V}$$
+medimos $$\hat{V}_o = \SI{2}{\volt}$$
 
 que es consistente con los simulado.
 
 \hfill
 
-*Reemplazar $R_L$ por una resistencia de $10\Omega$*
+*Reemplazar $R_L$ por una resistencia de $\SI{10}{\ohm}$*
 
 ![Resultado de la simulación](img/SimA110.png)
 
-En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella $25mA$ lo cual coincide con $I_CS$. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.
+En este caso se ve que la señal se recorta. Viendo la simulación de corriente por la resistencia de carga se ve que circulan por ella $\SI{25}{\milli \ampere}$ lo cual coincide con $I_CS$. Se aleja del modelo ideal por no poder entregar más corriente que la de cortocircuito.
 
 ###b)  $R_1 = 1\;\text{M}\Omega$ y $R_2 = 10\;\text{M}\Omega$
 
