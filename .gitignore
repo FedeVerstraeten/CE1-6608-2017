@@ -1,0 +1,4 @@
+# gitignore
+
+TP/TL1/informe/*.pdf
+*.pdf
