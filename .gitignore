@@ -1,4 +1,6 @@
 # gitignore
 
-TP/TL1/informe/*.pdf
-*.pdf
+TP/TL1/informe/TL1.pdf
+TP/TL2/informe/TL2.pdf
+TP/TL3/informe/TL3.pdf
+TP/TL4/informe/TL4.pdf

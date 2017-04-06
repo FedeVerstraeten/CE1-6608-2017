@@ -174,11 +174,11 @@ Se ve que al integrar la tensión de entrada con el más pequeño offset de cont
 
 *Observar si hay diferencia al utilizar puntas de prueba directa (1X) y compensada (10X).*
 
-Se vio al medir con base de tiempo en \SI{250}{\micro}{seconds} que el tiempo de crecimiento es de aproximadamente \SI{500}{\micro\seconds} con ambas puntas.
+Se vio al medir con base de tiempo en \SI{250}{\micro\second} que el tiempo de crecimiento es de aproximadamente \SI{500}{\micro\second} con ambas puntas.
 
 #F) Circuitos Rectificadores
 
-**El circuito rectificador de media onda, implementado con un diodo 1N4001/07 y un resistor R_L=10 KΩ, se conecta a un banco de medición como el indicado:**
+**El circuito rectificador de media onda, implementado con un diodo 1N4001/07 y un resistor $R_L = \SI{10}{\kilo\ohm}$, se conecta a un banco de medición como el indicado:**
 
 ![Banco de medicion para el circuito rectificador](img/CF.png)
 
