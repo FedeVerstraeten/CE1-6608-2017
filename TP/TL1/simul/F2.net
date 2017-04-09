@@ -1,0 +1,12 @@
+* C:\users\fverstra\My Documents\Repository\CE1-6608-2017\TP\TL1\simul\F2.asc
+V3 Vi 0 SINE(0 5 50)
+D3 N001 V_RL D1N4007
+R1 V_RL 0 1k
+C1 V_RL 0 47µ
+R2 N001 Vi 50
+.model D D
+.lib C:\Program Files (x86)\LTC\LTspiceIV\lib\cmp\standard.dio
+.tran 0 0.08 0.0 0.001
+.model D1N4007 D(Is=14.11n N=1.984 Rs=33.89m Ikf=94.81 Xti=3 Eg=1.11 Cjo=25.89p M=.44 Vj=.3245 Fc=.5 Bv=75 Ibv=10u Tt=5.7u)
+.backanno
+.end
