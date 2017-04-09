@@ -180,14 +180,99 @@ Se vio al medir con base de tiempo en \SI{250}{\micro\second} que el tiempo de c
 
 **El circuito rectificador de media onda, implementado con un diodo 1N4001/07 y un resistor $R_L = \SI{10}{\kilo\ohm}$, se conecta a un banco de medición como el indicado:**
 
-![Banco de medicion para el circuito rectificador](img/CF.png)
+![Banco de medicion para el circuito rectificador](img/F_banco.png){width=70%}
 
-**Se lo excitará con una señal senoidal de frecuencia 50 Hz y amplitud 5 V pico.**
+\hfill
 
-Con un capacitor de \SI{47}{\micro\farad} en paralelo y una señal de $f=\SI{50}{\hertz}$ y A=\SI{5}{\volt}
+##1. Excitación con una señal senoidal de 50Hz y 5V pico.
 
-|$R_L(\Omega)$ | $V_{ripple(ef)}$ | $\bar{V}_o$ | $z\% $|
-|-|-|-|-|
-|$10K$| | | |
-|$4,7K$ | | | |
-|$1K$| | | |
+\hfill
+
+![Corriente diodo (arriba). Tensión entrada 50Hz y 5V pico vs. Tensión salida en $R_L$ (abajo).Banco de medición 50Hz y 5V pico](img/F_simul_diode_50hz.png)
+
+\hfill
+
+Como se observa en la simulación, en el período positivo de la señal el diodo conduce en directa replicando la curva disminuida en aproximadamente $\SI{0,7}{\volt}$, que es la tensión de activación.
+
+**¿Por qué se utiliza una amplitud pico de 5V en la excitación y no de 50mV?.**
+
+Para que el diodo funcione como rectificador la señal de excitación utilizada debe ser tal que el diodo pueda ser polarizado, de modo que en el semiciclo positivo se superen los $V_d = \SI{0,7}{\volt}$ pico y su funcionmiento sea en directa. Luego, en el semiciclo negativo no se supere la tensión de ruptura $V_r$. 
+Bajo esas condiciones se puede afirmar que el diodo cumple con su función de rectificador, aproximándolo al comportamiento de una llave abierta o cerrada dependiendo de la tensión aplicada al diodo.
+
+![Curva ideal del diodo](img/F_diodo_ideal.png){width=40%}
+
+
+**¿Qué forma de onda de $V_o$, valores extremos y medio se esperaría medir si se aumenta la
+frecuencia de excitación a 50kHz?**
+
+\hfill
+
+![Corriente diodo (arriba). Tensión entrada 50kHz y 5V pico vs. Tensión salida en $R_L$ (abajo).](img/F_simul_diode_50khz.png)
+
+\hfill
+
+Como se observa a través de la simulación, al elevar la frecuencia en tres ordenes de magnitud nos encontramos con que en el semiciclo negativo de la señal, el diodo continua conduciendo como si estuviera en directa, copiando a la señal de entrada hasta la tercera parte del semiciclo (aproximadamente $\SI{4}{\micro\second}$). \
+Esto se debe a que el período de la señal es menor al tiempo que demora el diodo de cambiar de estado de polarización, por ende queda una densidad de cargas que permite la conducción en inversa. \
+De acuerdo con las hojas de datos del diodo 1N4001 a frecuencias como \SI{50}{\kilo\hertz} deben tenerse en cuenta los efectos capacitivos que se hacen notorios en el pico de tension negativo al momento en que cambia el modo de operación del diodo.
+
+\hfill
+
+##2. Agregado de un capacitor de \SI{47}{\micro\farad} en paralelo y una señal de \SI{50}{\hertz} y \SI{5}{\volt} pico
+
+Exitando el circuito con una señal senoidal de frecuencia 50 Hz y amplitud 5 V pico.
+
+\hfill
+![Banco de medición con capacitor](img/F_diodo_cap.png){width=40%}
+
+
+###a) Meidición de Ripple variando la resistencia de carga.
+
+Observar y medir la tensión de salida sobre $R_L$ , $V_o$ , su valor medio, la variación máxima de la tensión de salida (ripple) de $V_o$ , $v_{ripple} = \Delta V_o$ , y calcular el **z%** para los valores resistencia de carga $R_L$ : \SI{10}{\kilo\ohm}, \SI{4,7}{\kilo\ohm}, y \SI{1}{\kilo\ohm}.
+
+Para comenzar simulamos cada uno de los casos indicados y los contrastamos con las señal medida.
+
+**Simulaciones**
+
+![Circuito de simulación](img/F_simul_diode_cap.png){width=70%}
+
+A partir del circuito de simulción indicado, variando la resistencia de carga se obtuvieron las curvas simuladas.
+
+![Simulación con carga $R_L = \SI{1}{\kilo\ohm}$](img/F_sim_ripple_1k.png)
+
+![Simulación con carga $R_L = \SI{4,7}{\kilo\ohm}$](img/F_sim_ripple_4,7k.png)
+
+![Simulación con carga $R_L = \SI{10}{\kilo\ohm}$](img/F_sim_ripple_10k.png)
+
+
+**Mediciones**
+
+\hfill
+
+![Medición con carga $R_L = \SI{1}{\kilo\ohm}$](img/F_med_ripple_1k.jpg){width=80%}
+
+![Medición con carga $R_L = \SI{4,7}{\kilo\ohm}$](img/F_med_ripple_4,7k.jpg){width=80%}
+
+![Medición con carga $R_L = \SI{10}{\kilo\ohm}$](img/F_med_ripple_10k.jpg){width=80%}
+
+\hfill
+
+**Porcentaje de ripple o rizado**
+
+A partir de las curvas obtenidas mediante la medición del ripple comparamos los siguientes parámetros, recordando la relación $Z=100\frac{V_o}{V_{ripple}}$.
+
+$R_L=\SI{1}{\kilo\ohm}$, $V_o=\SI{3,06}{\volt}$, $V_{ripple}=\SI{1,02}{\volt}$, Z=33%
+
+![](img/F_med_ripple_1k_bis.jpg){width=70%}
+
+$R_L=\SI{4,7}{\kilo\ohm}$, $V_o=\SI{3,9}{\volt}$, $V_{ripple}=\SI{286}{\milli\volt}$, Z=7,33%
+
+![](img/F_med_ripple_4,7k_bis.jpg){width=70%}
+
+$R_L=\SI{10}{\kilo\ohm}$, $V_o=\SI{4,09}{\volt}$, $V_{ripple}=\SI{158}{\milli\volt}$, Z=3,86%
+
+![](img/F_med_ripple_10k_bis.jpg){width=70%}
+
+
+###b) Construir la gráfica de $V_{o (medio)}= f(I_{o (medio)})$, llamada “característica de regulación”.
+
+La característica de regulación indica la tensión de salida en función de la corriente entregada al circuito externo, de aquí se puede dimensionar si el circuito empleado como fuente puede o no ser utilizado para una carga determinada, esto es, según la corriente que demande el circuito externo se verificará en la característica de regulación si es posible entregarla para un determinado Vo. Además, haciendo el cociente V0/I0 queda indicado la resistencia equivalente que vería el circuito externo al conectar la fuente.  
