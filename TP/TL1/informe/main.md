@@ -124,7 +124,7 @@ Valor de tensión pico en vacío: $\SI{52}{\milli\volt}$	($R_1 = \SI{1}{\kilo\oh
 |  \SI{5}{\mega\hertz}|          \SI{4}{\milli\volt}|
 | \SI{10}{\mega\hertz}|          \SI{1}{\milli\volt}|
 
-\hfill
+\pagebreak
 
 Donde se ve que $f_c=\SI{94}{\kilo\hertz}$
 
