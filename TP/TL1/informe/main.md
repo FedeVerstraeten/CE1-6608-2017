@@ -1,3 +1,5 @@
+\pagebreak
+
 *Objetivo: Presentar a través de mediciones en laboratorio, la utilización de circuitos integrados analógicos y componentes asociados para la realización de distintas funciones. Observar las limitaciones que presenta el uso de los modelos representativos del funcionamiento de dichos circuitos integrados para predecir su comportamiento, como así también la influencia de las características del instrumental utilizado en la medición, en los valores obtenidos.*
 
 #A) Amplificador de tensión o multiplicador por una constante
@@ -222,6 +224,7 @@ De acuerdo con las hojas de datos del diodo 1N4001 a frecuencias como \SI{50}{\k
 Exitando el circuito con una señal senoidal de frecuencia 50 Hz y amplitud 5 V pico.
 
 \hfill
+
 ![Banco de medición con capacitor](img/F_diodo_cap.png){width=40%}
 
 
@@ -237,22 +240,22 @@ Para comenzar simulamos cada uno de los casos indicados y los contrastamos con l
 
 A partir del circuito de simulción indicado, variando la resistencia de carga se obtuvieron las curvas simuladas.
 
-![Simulación con carga $R_L = \SI{1}{\kilo\ohm}$](img/F_sim_ripple_1k.png)
+![Simulación con carga $R_L = \SI{1}{\kilo\ohm}$ ](img/F_sim_ripple_1k.png)
 
-![Simulación con carga $R_L = \SI{4,7}{\kilo\ohm}$](img/F_sim_ripple_4,7k.png)
+![Simulación con carga $R_L = \SI{4,7}{\kilo\ohm}$ ](img/F_sim_ripple_4,7k.png)
 
-![Simulación con carga $R_L = \SI{10}{\kilo\ohm}$](img/F_sim_ripple_10k.png)
+![Simulación con carga $R_L = \SI{10}{\kilo\ohm}$ ](img/F_sim_ripple_10k.png)
 
 
 **Mediciones**
 
 \hfill
 
-![Medición con carga $R_L = \SI{1}{\kilo\ohm}$](img/F_med_ripple_1k.jpg){width=80%}
+![Medición con carga $R_L = \SI{1}{\kilo\ohm}$ ](img/F_med_ripple_1k.jpg){width=80%}
 
-![Medición con carga $R_L = \SI{4,7}{\kilo\ohm}$](img/F_med_ripple_4,7k.jpg){width=80%}
+![Medición con carga $R_L = \SI{4,7}{\kilo\ohm}$ ](img/F_med_ripple_4,7k.jpg){width=80%}
 
-![Medición con carga $R_L = \SI{10}{\kilo\ohm}$](img/F_med_ripple_10k.jpg){width=80%}
+![Medición con carga $R_L = \SI{10}{\kilo\ohm}$ ](img/F_med_ripple_10k.jpg){width=80%}
 
 \hfill
 
@@ -262,17 +265,19 @@ A partir de las curvas obtenidas mediante la medición del ripple comparamos los
 
 $R_L=\SI{1}{\kilo\ohm}$, $V_o=\SI{3,06}{\volt}$, $V_{ripple}=\SI{1,02}{\volt}$, Z=33%
 
-![](img/F_med_ripple_1k_bis.jpg){width=70%}
+![Acercamiento de la medición con resistencia de $\SI{1}{\kilo\ohm}$ ](img/F_med_ripple_1k_bis.jpg){width=70%}
 
 $R_L=\SI{4,7}{\kilo\ohm}$, $V_o=\SI{3,9}{\volt}$, $V_{ripple}=\SI{286}{\milli\volt}$, Z=7,33%
 
-![](img/F_med_ripple_4,7k_bis.jpg){width=70%}
+![Acercamiento de la medición con resistencia de $\SI{4,7}{\kilo\ohm}$ ](img/F_med_ripple_4,7k_bis.jpg){width=70%}
 
 $R_L=\SI{10}{\kilo\ohm}$, $V_o=\SI{4,09}{\volt}$, $V_{ripple}=\SI{158}{\milli\volt}$, Z=3,86%
 
-![](img/F_med_ripple_10k_bis.jpg){width=70%}
+![Acercamiento de la medición con resistencia de $\SI{1}{\kilo\ohm}$ ](img/F_med_ripple_10k_bis.jpg){width=70%}
 
 
 ###b) Construir la gráfica de $V_{o (medio)}= f(I_{o (medio)})$, llamada “característica de regulación”.
+
+![Característica de regulación ](img/regulacion.png)
 
 La característica de regulación indica la tensión de salida en función de la corriente entregada al circuito externo, de aquí se puede dimensionar si el circuito empleado como fuente puede o no ser utilizado para una carga determinada, esto es, según la corriente que demande el circuito externo se verificará en la característica de regulación si es posible entregarla para un determinado Vo. Además, haciendo el cociente V0/I0 queda indicado la resistencia equivalente que vería el circuito externo al conectar la fuente.  
