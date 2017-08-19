@@ -11,7 +11,7 @@
 * [Tomás A. González](tgonzalez@fi.uba.ar)
 * [Gustavo Bongiovanni]()
 
-##Régimen de cursada
+## Régimen de cursada
 
 |  Tema                                                   |       TL    | 
 | ------------------------------------------------------  | ------------|  
@@ -23,7 +23,10 @@
 | Respuesta en frecuencias                                |      TL3    |    
 | Fuentes de corriente y carga activa                     |             |
 | TL4 --> Diseño Analógico                                |             |     
+
 ## Links útiles
 
 * [Simple template pandoc - by pietrodn](https://github.com/pietrodn/pandoc-templates)
-
+* [LTSPice - Win 7,8,10](http://ltspice.linear-tech.com/software/LTspiceXVII.exe) 
+* [LTSpice - Win XP](http://ltspice.linear-tech.com/software/LTspiceIV.exe)
+* [MEGA - Carpeta electrónicos](https://mega.nz/#F!jVwnjCDJ!IcPqdY2XnOKU83iyZ5La4w!aIwmXJwS)
