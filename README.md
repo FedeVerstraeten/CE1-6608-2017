@@ -31,3 +31,4 @@
 * [LTSpice - Win XP](http://ltspice.linear-tech.com/software/LTspiceIV.exe)
 * [MEGA - Carpeta electrónicos](https://mega.nz/#F!jVwnjCDJ!IcPqdY2XnOKU83iyZ5La4w!aIwmXJwS)
 * [Teóricas Dispositivos Semiconductores](http://materias.fi.uba.ar/6625/teoricas.php)
+* [Hoja de fórmulas Dispo](http://materias.fi.uba.ar/6625/Examenes/Hoja_Formulas.pdf)
