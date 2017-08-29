@@ -30,3 +30,4 @@
 * [LTSPice - Win 7,8,10](http://ltspice.linear-tech.com/software/LTspiceXVII.exe) 
 * [LTSpice - Win XP](http://ltspice.linear-tech.com/software/LTspiceIV.exe)
 * [MEGA - Carpeta electrónicos](https://mega.nz/#F!jVwnjCDJ!IcPqdY2XnOKU83iyZ5La4w!aIwmXJwS)
+* [Teóricas Dispositivos Semiconductores](http://materias.fi.uba.ar/6625/teoricas.php)
