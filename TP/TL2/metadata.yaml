@@ -1,0 +1,15 @@
+---
+    author:
+    - name: "Federico Verstraeten"
+      padron: "92"
+    - name: "Ezequiel Ignacio Pepe"
+      padron: "89908"
+    date: 18 de octubre de 2017
+    title: "TRABAJO DE LABORATORIO 2"
+    subtitle: "ETAPAS CON TRANSISTORES DISCRETOS"
+    toc: false
+    lang: "es"
+    papersize: "a4"
+    documentclass: "article"
+    graphics: true
+---

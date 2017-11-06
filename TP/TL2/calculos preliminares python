@@ -1,0 +1,744 @@
+ezequiel@ezequiel:~$ python
+Python 3.6.2 |Anaconda, Inc.| (default, Sep 30 2017, 18:42:57) 
+[GCC 7.2.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import numpy as np
+>>> gm=1/25
+>>> Re=470
+>>> Re
+470
+>>> Rc=[1000 4000]
+  File "<stdin>", line 1
+    Rc=[1000 4000]
+                ^
+SyntaxError: invalid syntax
+>>> Rc=[1000, 4000]
+>>> Rc
+[1000, 4000]
+>>> Rl=[4700,10000]
+>>> Rcl=Rc*Rl
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: can't multiply sequence by non-int of type 'list'
+>>> Rcl=Rc.*Rl
+  File "<stdin>", line 1
+    Rcl=Rc.*Rl
+           ^
+SyntaxError: invalid syntax
+>>> def cartesian(arrays, out=None):
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block
+>>>     arrays = [np.asarray(x) for x in arrays]
+  File "<stdin>", line 1
+    arrays = [np.asarray(x) for x in arrays]
+    ^
+IndentationError: unexpected indent
+>>>     dtype = arrays[0].dtype
+  File "<stdin>", line 1
+    dtype = arrays[0].dtype
+    ^
+IndentationError: unexpected indent
+>>> 
+>>>     n = np.prod([x.size for x in arrays])
+  File "<stdin>", line 1
+    n = np.prod([x.size for x in arrays])
+    ^
+IndentationError: unexpected indent
+>>>     if out is None:
+  File "<stdin>", line 1
+    if out is None:
+    ^
+IndentationError: unexpected indent
+>>>         out = np.zeros([n, len(arrays)], dtype=dtype)
+  File "<stdin>", line 1
+    out = np.zeros([n, len(arrays)], dtype=dtype)
+    ^
+IndentationError: unexpected indent
+>>> 
+>>>     m = n / arrays[0].size
+  File "<stdin>", line 1
+    m = n / arrays[0].size
+    ^
+IndentationError: unexpected indent
+>>>     out[:,0] = np.repeat(arrays[0], m)
+  File "<stdin>", line 1
+    out[:,0] = np.repeat(arrays[0], m)
+    ^
+IndentationError: unexpected indent
+>>>     if arrays[1:]:
+  File "<stdin>", line 1
+    if arrays[1:]:
+    ^
+IndentationError: unexpected indent
+>>>         cartesian(arrays[1:], out=out[0:m,1:])
+  File "<stdin>", line 1
+    cartesian(arrays[1:], out=out[0:m,1:])
+    ^
+IndentationError: unexpected indent
+>>>         for j in xrange(1, arrays[0].size):
+  File "<stdin>", line 1
+    for j in xrange(1, arrays[0].size):
+    ^
+IndentationError: unexpected indent
+>>>             out[j*m:(j+1)*m,1:] = out[0:m,1:]
+  File "<stdin>", line 1
+    out[j*m:(j+1)*m,1:] = out[0:m,1:]
+    ^
+IndentationError: unexpected indent
+>>>     return outdef cartesian(arrays, out=None):
+  File "<stdin>", line 1
+    return outdef cartesian(arrays, out=None):
+    ^
+IndentationError: unexpected indent
+>>>     arrays = [np.asarray(x) for x in arrays]
+  File "<stdin>", line 1
+    arrays = [np.asarray(x) for x in arrays]
+    ^
+IndentationError: unexpected indent
+>>>     dtype = arrays[0].dtype
+  File "<stdin>", line 1
+    dtype = arrays[0].dtype
+    ^
+IndentationError: unexpected indent
+>>>     n = np.prod([x.size for x in arrays])
+  File "<stdin>", line 1
+    n = np.prod([x.size for x in arrays])
+    ^
+IndentationError: unexpected indent
+>>>     if out is None:
+  File "<stdin>", line 1
+    if out is None:
+    ^
+IndentationError: unexpected indent
+>>>         out = np.zeros([n, len(arrays)], dtype=dtype)
+  File "<stdin>", line 1
+    out = np.zeros([n, len(arrays)], dtype=dtype)
+    ^
+IndentationError: unexpected indent
+>>>     m = n / arrays[0].size
+  File "<stdin>", line 1
+    m = n / arrays[0].size
+    ^
+IndentationError: unexpected indent
+>>>     out[:,0] = np.repeat(arrays[0], m)
+  File "<stdin>", line 1
+    out[:,0] = np.repeat(arrays[0], m)
+    ^
+IndentationError: unexpected indent
+>>>     if arrays[1:]:
+  File "<stdin>", line 1
+    if arrays[1:]:
+    ^
+IndentationError: unexpected indent
+>>>         cartesian(arrays[1:], out=out[0:m,1:])
+  File "<stdin>", line 1
+    cartesian(arrays[1:], out=out[0:m,1:])
+    ^
+IndentationError: unexpected indent
+>>>         for j in xrange(1, arrays[0].size):
+  File "<stdin>", line 1
+    for j in xrange(1, arrays[0].size):
+    ^
+IndentationError: unexpected indent
+>>>             out[j*m:(j+1)*m,1:] = out[0:m,1:]
+  File "<stdin>", line 1
+    out[j*m:(j+1)*m,1:] = out[0:m,1:]
+    ^
+IndentationError: unexpected indent
+>>>     return out
+  File "<stdin>", line 1
+    return out
+    ^
+IndentationError: unexpected indent
+>>> def cartesian(arrays, out=None):
+...     arrays = [np.asarray(x) for x in arrays]
+...     dtype = arrays[0].dtype
+...     n = np.prod([x.size for x in arrays])
+...     if out is None:
+...         out = np.zeros([n, len(arrays)], dtype=dtype)
+...     m = n / arrays[0].size
+...     out[:,0] = np.repeat(arrays[0], m)
+...     if arrays[1:]:
+...         cartesian(arrays[1:], out=out[0:m,1:])
+...         for j in xrange(1, arrays[0].size):
+...             out[j*m:(j+1)*m,1:] = out[0:m,1:]
+...     return out
+... 
+>>> Rc
+[1000, 4000]
+>>> Rl
+[4700, 10000]
+>>> cartesian(Rc,Rl)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 8, in cartesian
+TypeError: list indices must be integers or slices, not tuple
+>>> Rl[1]
+10000
+>>> Rl[2]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+IndexError: list index out of range
+>>> Rl[0]
+4700
+>>> Rl.size
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'size'
+>>> Rl.length
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'length'
+>>> Rl.length()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'length'
+>>> Rl.len()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'len'
+>>> len(Rl)
+2
+>>> len(Rc)
+2
+>>> cartesian(Rc,Rl)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 8, in cartesian
+TypeError: list indices must be integers or slices, not tuple
+>>> RC=np.ndarray(Rc)
+>>> RL=np.ndarray(RL)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'RL' is not defined
+>>> RL=np.ndarray(Rl)
+>>> R
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'R' is not defined
+>>> RC
+array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       ..., 
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.]])
+>>> RL
+array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       ..., 
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.]])
+>>> rc
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'rc' is not defined
+>>> Rc
+[1000, 4000]
+>>> RL=np.ndarray((1000,4700))
+>>> RL
+array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       ..., 
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.]])
+>>> RL=np.ndarray((1000,4700))
+>>> RL
+array([[ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       ..., 
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.],
+       [ 0.,  0.,  0., ...,  0.,  0.,  0.]])
+>>> RL(0)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'numpy.ndarray' object is not callable
+>>> RL(1)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'numpy.ndarray' object is not callable
+>>> RL=np.ndarray((2))
+>>> RL
+array([  4.94065646e-324,   4.94065646e-324])
+>>> RL=np.array(Rl)
+>>> RL
+array([ 4700, 10000])
+>>> RC=np.array([1000,4700])
+>>> RC
+array([1000, 4700])
+>>> cartesian(RC,RL)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 8, in cartesian
+IndexError: too many indices for array
+>>> RC
+array([1000, 4700])
+>>> RL
+array([ 4700, 10000])
+>>> RL=np.array([4700,10000])
+>>> RL
+array([ 4700, 10000])
+>>> cartesian(RC,RL)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 8, in cartesian
+IndexError: too many indices for array
+>>> cartesian((RC,RL))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in cartesian
+TypeError: slice indices must be integers or None or have an __index__ method
+>>> (RC,RL)
+(array([1000, 4700]), array([ 4700, 10000]))
+>>> (RC,RL)[1:]
+(array([ 4700, 10000]),)
+>>> (RC,RL)[:,0]
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: tuple indices must be integers or slices, not tuple
+>>> (RC,RL)[0]
+array([1000, 4700])
+>>> (RC,RL)
+(array([1000, 4700]), array([ 4700, 10000]))
+>>> (RC,RL)[1:]
+(array([ 4700, 10000]),)
+>>> cartesian((RC,RL))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in cartesian
+TypeError: slice indices must be integers or None or have an __index__ method
+>>> cartesian((RC,RL),o)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'o' is not defined
+>>> cartesian((RC,RL))
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 10, in cartesian
+TypeError: slice indices must be integers or None or have an __index__ method
+>>> def cartesian_product(*arrays):
+...     la = len(arrays)
+...     dtype = numpy.result_type(*arrays)
+...     arr = numpy.empty([len(a) for a in arrays] + [la], dtype=dtype)
+...     for i, a in enumerate(numpy.ix_(*arrays)):
+...         arr[...,i] = a
+...     return arr.reshape(-1, la)
+... 
+>>> cartesian_product(RC,RL)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "<stdin>", line 3, in cartesian_product
+NameError: name 'numpy' is not defined
+>>> def cartesian_product(*arrays):
+...     la = len(arrays)
+...     dtype = np.result_type(*arrays)
+...     arr = np.empty([len(a) for a in arrays] + [la], dtype=dtype)
+...     for i, a in enumerate(np.ix_(*arrays)):
+...         arr[...,i] = a
+...     return arr.reshape(-1, la)
+... 
+>>> cartesian_product(RC,RL)
+array([[ 1000,  4700],
+       [ 1000, 10000],
+       [ 4700,  4700],
+       [ 4700, 10000]])
+>>> cartesian_product(RC,RL).[1]
+  File "<stdin>", line 1
+    cartesian_product(RC,RL).[1]
+                             ^
+SyntaxError: invalid syntax
+>>> cartesian_product(RC,RL).(1)
+  File "<stdin>", line 1
+    cartesian_product(RC,RL).(1)
+                             ^
+SyntaxError: invalid syntax
+>>> cartesian_product(RC,RL)
+array([[ 1000,  4700],
+       [ 1000, 10000],
+       [ 4700,  4700],
+       [ 4700, 10000]])
+>>> a=cartesian_product(RC,RL)
+>>> a[1]
+array([ 1000, 10000])
+>>> a=cartesian_product(RC,RL)[1]
+>>> a
+array([ 1000, 10000])
+>>> cartesian_product(RC,RL)[1]
+array([ 1000, 10000])
+>>> cartesian_product(RC,RL)[0]
+array([1000, 4700])
+>>> cartesian_product(RC,RL)[2]
+array([4700, 4700])
+>>> cartesian_product(RC,RL)[3]
+array([ 4700, 10000])
+>>> cartesian_product(RC,RL)[3][0]
+4700
+>>> cartesian_product(RC,RL)[3][1]
+10000
+>>> for x in cartesian_product(RC,RL):
+...     print x
+  File "<stdin>", line 2
+    print x
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> 
+>>> for x in cartesian_product(RC,RL):
+...     print(x)
+... 
+[1000 4700]
+[ 1000 10000]
+[4700 4700]
+[ 4700 10000]
+>>> for x in cartesian_product(RC,RL):
+...     print(x[0]*x[1]/(x[0]+x[1])
+... 
+... 
+... 
+... )
+... 
+824.561403509
+909.090909091
+2350.0
+3197.27891156
+>>> RCL=np.zeroes(4)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'numpy' has no attribute 'zeroes'
+>>> RCL=np.ndarray(4)
+>>> RCL
+array([  4.94065646e-321,   4.94065646e-321,   2.32210854e-320,
+         2.32210854e-320])
+>>> for x in cartesian_product(RC,RL):
+... 
+  File "<stdin>", line 2
+    
+    ^
+IndentationError: expected an indented block
+>>> 
+>>> i=0
+>>> for x in cartesian_product(RC,RL):
+...     RCL[i]=(x[0]*x[1]/(x[0]+x[1])
+...     i=i+1
+  File "<stdin>", line 3
+    i=i+1
+    ^
+SyntaxError: invalid syntax
+>>> for x in cartesian_product(RC,RL):
+...     RCL[i]=(x[0]*x[1]/(x[0]+x[1]))
+...     i=i+1
+... 
+>>> RCL
+array([  824.56140351,   909.09090909,  2350.        ,  3197.27891156])
+>>> for x in RCL
+  File "<stdin>", line 1
+    for x in RCL
+               ^
+SyntaxError: invalid syntax
+>>> for x in RCL:
+...     print x
+  File "<stdin>", line 2
+    print x
+          ^
+SyntaxError: Missing parentheses in call to 'print'
+>>> for x in RCL:
+...     print(x)
+... 
+824.561403509
+909.090909091
+2350.0
+3197.27891156
+>>> for x in RCL:
+... 
+KeyboardInterrupt
+>>> gm
+0.04
+>>> for x in RCL:
+... 
+KeyboardInterrupt
+>>> for rcl in RCL:
+...     gm*rcl/(1+gm*Re)
+...     gm*rcl/(1+gm*Re)
+KeyboardInterrupt
+>>> for rcl in RCL:
+...     print(gm*rcl/(1+gm*Re))
+... 
+1.66578061315
+1.83654729109
+4.74747474747
+6.45914931629
+>>> gm*Re
+18.8
+>>> 1/300
+0.0033333333333333335
+>>> 25*3000
+75000
+>>> 25*300
+7500
+>>> for x in RCL:
+... Rcl
+  File "<stdin>", line 2
+    Rcl
+      ^
+IndentationError: expected an indented block
+>>> cartesian_product(RC,RL)
+array([[ 1000,  4700],
+       [ 1000, 10000],
+       [ 4700,  4700],
+       [ 4700, 10000]])
+>>> RCL
+array([  824.56140351,   909.09090909,  2350.        ,  3197.27891156])
+>>> gm*RCL
+array([  32.98245614,   36.36363636,   94.        ,  127.89115646])
+>>> gm*Re
+18.8
+>>> gm*RCL/gm*Re
+array([  387543.85964912,   427272.72727273,  1104500.        ,
+        1502721.08843537])
+>>> gm*RCL/(gm*Re)
+array([ 1.75438596,  1.93423598,  5.        ,  6.80272109])
+>>> gm*RCL/(1+gm*Re)
+array([ 1.66578061,  1.83654729,  4.74747475,  6.45914932])
+>>> gm=
+  File "<stdin>", line 1
+    gm=
+      ^
+SyntaxError: invalid syntax
+>>> gm
+0.04
+>>> gm=1
+>>> gm*RCL/(1+gm*Re)
+array([ 1.75066115,  1.93012932,  4.98938429,  6.78827794])
+>>> gm=10
+>>> gm*RCL/(1+gm*Re)
+array([ 1.75401277,  1.93382452,  4.9989364 ,  6.80127401])
+>>> gm=0.0001
+>>> gm*RCL/(1+gm*Re)
+array([ 0.07875467,  0.08682817,  0.22445081,  0.30537525])
+>>> gm=1000
+>>> gm*RCL/(1+gm*Re)
+array([ 1.75438223,  1.93423186,  4.99998936,  6.80270661])
+>>> gm=1/25
+>>> gm*RCL/(1+gm*
+... 
+KeyboardInterrupt
+>>> gm*RCL/(1+gm*Re)
+array([ 1.66578061,  1.83654729,  4.74747475,  6.45914932])
+>>> gm*10000/(1+gm*Re)
+20.2020202020202
+>>> gm*100000/(1+gm*Re)
+202.02020202020202
+>>> gm*25000/(1+gm*Re)
+50.505050505050505
+>>> RCL
+array([  824.56140351,   909.09090909,  2350.        ,  3197.27891156])
+>>> 300*0.025
+7.5
+>>> 300*0.025/0.001
+7500.0
+>>> 300*0.025/0.002
+3750.0
+>>> 300*0.025/0.00025
+30000.0
+>>> 300*0.025/0.00075
+10000.0
+>>> 300*0.025/0.0005
+15000.0
+>>> icq=0.0005
+>>> vt=0.025
+>>> gm=icq/vt
+>>> gm
+0.02
+>>> gm*RCL
+array([ 16.49122807,  18.18181818,  47.        ,  63.94557823])
+>>> Rc
+[1000, 4000]
+>>> RC
+array([1000, 4700])
+>>> RL
+array([ 4700, 10000])
+>>> cartesian_product(RC,RL)
+array([[ 1000,  4700],
+       [ 1000, 10000],
+       [ 4700,  4700],
+       [ 4700, 10000]])
+>>> RCL
+array([  824.56140351,   909.09090909,  2350.        ,  3197.27891156])
+>>> gm*RCL/(1+gm*Re)
+array([ 1.58569501,  1.74825175,  4.51923077,  6.14861329])
+>>> Re
+470
+>>> Re=1000
+>>> gm*RCL/(1+gm*Re)
+array([ 0.78529657,  0.86580087,  2.23809524,  3.04502753])
+>>> Re=0
+>>> gm*RCL/(1+gm*Re)
+array([ 16.49122807,  18.18181818,  47.        ,  63.94557823])
+>>> gm
+0.02
+>>> gm=1/25
+>>> gm*RCL/(1+gm*Re)
+array([  32.98245614,   36.36363636,   94.        ,  127.89115646])
+>>> Re=4700
+>>> gm*RCL/(1+gm*Re)
+array([ 0.17451035,  0.19240019,  0.4973545 ,  0.67667279])
+>>> Re=470
+>>> gm*RCL/(1+gm*Re)
+array([ 1.66578061,  1.83654729,  4.74747475,  6.45914932])
+>>> gm*RCL/(1+gm*Re)
+array([ 1.66578061,  1.83654729,  4.74747475,  6.45914932])
+>>> icq
+0.0005
+>>> vt
+0.025
+>>> gm=icq/vt
+>>> gm
+0.02
+>>> 300/gm
+15000.0
+>>> 100*82/(100+82)
+45.05494505494506
+>>> 15*45/(15+45)
+11.25
+>>> cartesian_product(RC,RL)
+array([[ 1000,  4700],
+       [ 1000, 10000],
+       [ 4700,  4700],
+       [ 4700, 10000]])
+>>> gm
+0.02
+>>> 
+>>> gm*RCL
+array([ 16.49122807,  18.18181818,  47.        ,  63.94557823])
+>>> 0.5/300
+0.0016666666666666668
+>>> Rb1=np.array([82000,820000])
+>>> Rb1
+array([ 82000, 820000])
+>>> Rb2=np.array([10000,100000])
+>>> cartesian_produc(Rb1,Rb2)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'cartesian_produc' is not defined
+>>> cartesian_product(Rb1,Rb2)
+array([[ 82000,  10000],
+       [ 82000, 100000],
+       [820000,  10000],
+       [820000, 100000]])
+>>> i=0
+>>> RB=np.ndarray(4)
+>>> RB
+array([ 16.49122807,  18.18181818,  47.        ,  63.94557823])
+>>> for rb in cartesian_product(Rb1,Rb2):
+...     RB[i]=rb[0]*rb[1]/(rb[0]+rb[1])
+...     i=i+1
+... 
+>>> RB
+array([  8913.04347826,  45054.94505495,   9879.51807229,  89130.43478261])
+>>> rb=RB[1]
+>>> rb
+45054.945054945056
+>>> 100/(82+100)
+0.5494505494505495
+>>> rb
+45054.945054945056
+>>> np.pow(10,-6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: module 'numpy' has no attribute 'pow'
+>>> np.power(10,-6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: Integers to negative integer powers are not allowed.
+>>> 10^-6
+-16
+>>> np.power(10,-6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+ValueError: Integers to negative integer powers are not allowed.
+>>> math.pow(10,-6)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'math' is not defined
+>>> import math
+>>> math.pow(10,-6)
+1e-06
+>>> 1e-06
+1e-06
+>>> 1000*1e-06
+0.001
+>>> 1.7e-06*rb+0.7+470*301*1.7e-06
+1.0170924065934066
+>>> ib=1e-03/300
+>>> ib
+3.3333333333333333e-06
+>>> ib=0.5e-03/300
+>>> ib
+1.6666666666666667e-06
+>>> ib*rb
+0.075091575091575088
+>>> rb
+45054.945054945056
+>>> ib*rb
+0.075091575091575088
+>>> re=np.array([470,1000])
+>>> re
+array([ 470, 1000])
+>>> ib*rb
+0.075091575091575088
+>>> vbe=-0.7
+>>> ib*rb-vbe+re*ib*301
+array([ 1.01087491,  1.27675824])
+>>> (ib*rb-vbe+re*ib*301)/0.55
+array([ 1.83795438,  2.32137862])
+>>> rb
+45054.945054945056
+>>> ib
+1.6666666666666667e-06
+>>> ib*rc
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'rc' is not defined
+>>> ib*rb
+0.075091575091575088
+>>> ib*300*1000
+0.5
+>>> 0.5*4.7+1
+3.35
+>>> 0.5*4.7+0.5
+2.85
+>>> 0.5*4.7+0.5*0.47
+2.585
+>>> rb=RB[3]
+>>> rb
+89130.434782608689
+>>> ib*rb-vbe+re*ib*301
+array([ 1.08433406,  1.35021739])
+>>> RB
+array([  8913.04347826,  45054.94505495,   9879.51807229,  89130.43478261])
+>>> vbe
+-0.7
+>>> vbe=0.62
+>>> vbe=-0.62
+>>> rb=RB[1]
+>>> ib*rb-vbe+re*ib*301
+array([ 0.93087491,  1.19675824])
+>>> rb
+45054.945054945056
+>>> rb=10e06
+>>> ib*rb-vbe+re*ib*301
+array([ 17.52245   ,  17.78833333])
+>>> rb=11e06
+>>> rb=1e06
+>>> ib*rb-vbe+re*ib*301
+array([ 2.52245   ,  2.78833333])
+>>> 

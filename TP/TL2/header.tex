@@ -1,0 +1,39 @@
+% header things...
+
+% SI units
+\usepackage{siunitx}
+
+\usepackage[a4paper,headheight=16pt,scale={0.7,0.8},hoffset=0.5cm]{geometry}
+
+
+%
+% El paquete amsmath agrega algunas funcionalidades extra a las fórmulas. 
+% Además defino la numeración de las tablas y figuras al estilo "Figura 2.3", 
+% en lugar de "Figura 7". (Por lo tanto, aunque no uses fórmulas, si querés
+% este tipo de numeración dejá el paquete amsmath descomentado).
+%
+\usepackage{amsmath}
+\numberwithin{equation}{section}
+%\numberwithin{figure}{section}
+\numberwithin{table}{section}
+
+%
+% Para tener cabecera y pie de página con un estilo personalizado:
+%
+\usepackage{fancyhdr}
+
+\usepackage[hang,bf]{caption}
+
+\usepackage{circuitikz}
+
+%
+%Para que las figuras no floten:
+%
+\usepackage{float}
+\let\origfigure\figure
+\let\endorigfigure\endfigure
+\renewenvironment{figure}[1][2] {
+    \expandafter\origfigure\expandafter[H]
+} {
+    \endorigfigure
+}
