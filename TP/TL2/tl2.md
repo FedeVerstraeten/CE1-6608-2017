@@ -71,6 +71,8 @@ $$V_{CC}=\SI{18.39}{\volt}$$
 
 Lo redondeamos a \SI{18}{\volt} la cual es una tensión de fuente nominal.
 
+##SIMULACIÓN
+
 Con estos datos proponemos el circuito y simulamos:
 
 ![Circuito propuesto](img/ParteA_circuito.jpg){width=50%}
@@ -95,4 +97,23 @@ Sí está realimentada por emisor.
 
 Se muestrea corriente y se suma tensión. La realimentación esabiliza la variación en $g_m$ causada por la variabilidad de $\beta$.
 
+##MEDICIÓN
+
+Se procedió a armar el circuito y medir entrada y salida.
+
+![Medición de $A_V$](img/ParteA_medicion.jpg){width=60%}
+
+Logramos verificar que el amplificador presenta el $A_V$ que habíamos calculado. Así mismo al poner una resistencia de \SI{10}{\kilo\ohm} en serie con el generador pudimos medir una tensión cercana al 50% entre entrada y salida.
+
+##Característica y parámetros de los dispositivos:
+
+Nos tocó medir el $V_T$ de un transistor MOSFET.
+
+![Banco de medición para medir $V_T$](img/ParteA_MedicionVT.jpg){width=70%}
+
+Fuimos aumentado V_{GS} de manera paulatina hasta encontrar el punto en que $V_{DS}$ comienza a caer. Ese valor de tensión es $V_T$.
+
+Así medimos un $V_T\=1.7V$
+
+#PARTE B
 
