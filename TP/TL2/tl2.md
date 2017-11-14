@@ -69,9 +69,30 @@ Viendo la placa probamos primero con los valores más altos de $R_{B1}$ y $R_{B2
 que nos deja:
 $$V_{CC}=\SI{18.39}{\volt}$$
 
+Lo redondeamos a \SI{18}{\volt} la cual es una tensión de fuente nominal.
+
 Con estos datos proponemos el circuito y simulamos:
 
-%![Circuito propuesto](img/ParteA_circuito.jpg)
+![Circuito propuesto](img/ParteA_circuito.jpg){width=50%}
 
-%![Resultados de la simulación](img/ParteA_sim.jpg)
+![Resultados de la simulación](img/ParteA_sim.jpg){width=50%}
+
+Con una señal de 10mV a la entrada tenemos una de 500mV a la salida por lo que vemos que se cumple con la amplificación pedida.
+
+Para poder medir $R_i$ colocamos una resistencia auxiliar de \SI{10}{\kilo\ohm} en serie con la fuente y medimos de la salida de la misma. Esta resistencia está en serie con la R_i por lo que formará un divisor de tensión con la misma. Sí la caida de tensión del divisor resistivo es mayor a la mitad de la de entrada podremos concluir que $R_i>\SI{10}{\kilo\ohm}$.
+
+![Simulación en la entrada y salida del divisor de tensión](img/ParteA_simDR.jpg){width=70%}
+
+Como se ve la salida es casi exactamente de la mitad de la tensión de entrada. Esto que implica que $R_i\sim \SI{10}{\kilo\ohm}$.
+
+Se nos hace algunas preguntas sobre el amplificador:
+
+**¿Está realimentada para la señal?.**
+
+Sí está realimentada por emisor.
+
+**Si lo está, ¿qué se muestrea a la salida y qué se suma a la entrada?. De acuerdo con esto, ¿qué parámetro de transferencia del amplificador es el que se quiere estabilizar si la realimentación fuese negativa?**.
+
+Se muestrea corriente y se suma tensión. La realimentación esabiliza la variación en $g_m$ causada por la variabilidad de $\beta$.
+
 
