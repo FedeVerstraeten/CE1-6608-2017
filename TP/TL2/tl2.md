@@ -75,15 +75,15 @@ Lo redondeamos a \SI{18}{\volt} la cual es una tensión de fuente nominal.
 
 Con estos datos proponemos el circuito y simulamos:
 
-![Circuito propuesto](img/ParteA_circuito.jpg){width=50%}
+![Circuito propuesto](img/ParteA_circuito.jpg){width=70%}
 
-![Resultados de la simulación](img/ParteA_sim.jpg){width=50%}
+![Resultados de la simulación](img/ParteA_sim.jpg){width=70%}
 
 Con una señal de 10mV a la entrada tenemos una de 500mV a la salida por lo que vemos que se cumple con la amplificación pedida.
 
 Para poder medir $R_i$ colocamos una resistencia auxiliar de \SI{10}{\kilo\ohm} en serie con la fuente y medimos de la salida de la misma. Esta resistencia está en serie con la R_i por lo que formará un divisor de tensión con la misma. Sí la caida de tensión del divisor resistivo es mayor a la mitad de la de entrada podremos concluir que $R_i>\SI{10}{\kilo\ohm}$.
 
-![Simulación en la entrada y salida del divisor de tensión](img/ParteA_simDR.jpg){width=70%}
+![Simulación en la entrada y salida del divisor de tensión](img/ParteA_simDR.jpg){width=90%}
 
 Como se ve la salida es casi exactamente de la mitad de la tensión de entrada. Esto que implica que $R_i\sim \SI{10}{\kilo\ohm}$.
 
@@ -101,7 +101,7 @@ Se muestrea corriente y se suma tensión. La realimentación esabiliza la variac
 
 Se procedió a armar el circuito y medir entrada y salida.
 
-![Medición de $A_V$](img/ParteA_medicion.jpg){width=60%}
+![Medición de $A_V$](img/ParteA_medicion.jpg){width=80%}
 
 Logramos verificar que el amplificador presenta el $A_V$ que habíamos calculado. Así mismo al poner una resistencia de \SI{10}{\kilo\ohm} en serie con el generador pudimos medir una tensión cercana al 50% entre entrada y salida.
 
@@ -121,7 +121,7 @@ Se nos pide agregar una etapa en CC entre el generador de señal y la etapa ampl
 
 Vamos a referirnos como etapa 2 a la etapa original y como etapa 1 a la nueva etapa.
 
-![Circuito propuesto](img/ParteB_circuito.jpg){width=75%}
+![Circuito propuesto](img/ParteB_circuito.jpg){width=90%}
 
 *El valor de la corriente de reposo de la etapa agregada, para mantener inalterados (de ser posible) los valores de reposo de la etapa amplificadora original.*
 
@@ -130,16 +130,21 @@ $$I_{CQ1}=\frac{V_{CC}-V_{BQ2}}{R_{E1}}=\SI{1,7}{\milli\ampere}$$
 
 *¿Cómo se modifica el equivalente Thèvenin del generador que excita a la etapa amplificadora original cuando se agrega la etapa seguidor?.*
 
-Dado que para un seguidor el $A_V\sim1$ tenemos que $V_{TH}$ del generador visto desde la etapa original se va a mantener prácticamente igual. Mientras que
-$$R_{TH}=R_{O1}=R_{E1}\parallel \bigg(\frac{r_\pi + R_{B11}\parallel R_{B21}\parallel R_S}{\beta+1} \bigg)$$
+Dado que para un seguidor el $A_v\sim1$ tenemos que $V_{TH}$ del generador visto desde la etapa original se va a mantener prácticamente igual. Mientras que
+$$R_{TH}=R_{E1}\parallel R_{O1}=R_{E1}\parallel \bigg(r_{e1}+\frac{R_{B1}\parallel R_{B2}\parallel R_S}{\beta+1} \bigg)=\SI{0,166}{\ohm}$$
 
+*¿Cómo son los nuevos parámetros Ri, Ro y Av de esta etapa con dos transistores respecto a los obtenidos en la etapa original bajo estudio?.*
 
+Calculo el nuevo $R_i$
+$$R_i=R_{B1} \parallel R_{B2} \parallel R_{ib} $$
+$$R_i=R_{B1} \parallel R_{B2} \parallel (\beta+1)(r_e1+r_{o1}\parallel R_{E1}) \sim \SI{95}{\kilo\ohm} $$
+se ve que es un orden de magnitud más grande que el R_i de la parte A.
 
-*¿Cómo son los nuevos parámetros Ri, Ro y Av de esta etapa con dostransistores respecto a los obtenidos en la etapa original bajo estudio?.*
-
+$$A_v=A_{v1}A_{v2}=\frac{g_{m1}(R_{E1}\parallel R_{i2})}{1+g_{m1}(R_{E1}\parallel R_{i2})}\SI{50}{}=\SI{49,2}{} $$
 
 
 ##SIMULACIÓN
 
 ![Simulación de la amplificación con el circuito multietapa](img/ParteB_sim.jpg){width=70%}
 
+Vemos que se mantiene la amplificación.
