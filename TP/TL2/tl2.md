@@ -97,6 +97,9 @@ Sí está realimentada por emisor.
 
 Se muestrea corriente y se suma tensión. La realimentación esabiliza la variación en $g_m$ causada por la variabilidad de $\beta$.
 
+Calculo $R_O$
+$$R_O=R_C \parallel r_{o}\bigg(1+\frac{\beta (R_E \parallel R_{ES})}{R_E \parallel R_{ES} +r_{\pi2}+R_{BTH}}\bigg)\sim R_C$$
+
 ##MEDICIÓN
 
 Se procedió a armar el circuito y medir entrada y salida.
@@ -137,14 +140,26 @@ $$R_{TH}=R_{E1}\parallel R_{O1}=R_{E1}\parallel \bigg(r_{e1}+\frac{R_{B1}\parall
 
 Calculo el nuevo $R_i$
 $$R_i=R_{B1} \parallel R_{B2} \parallel R_{ib} $$
-$$R_i=R_{B1} \parallel R_{B2} \parallel (\beta+1)(r_e1+r_{o1}\parallel R_{E1}) \sim \SI{95}{\kilo\ohm} $$
-se ve que es un orden de magnitud más grande que el R_i de la parte A.
+$$R_i=R_{B1} \parallel R_{B2} \parallel (\beta+1)(r_{e1}+r_{o1}\parallel R_{E1}) \sim \SI{95}{\kilo\ohm} $$
+se ve que es un orden de magnitud más grande que el $R_i$ de la parte A.
 
 $$A_v=A_{v1}A_{v2}=\frac{g_{m1}(R_{E1}\parallel R_{i2})}{1+g_{m1}(R_{E1}\parallel R_{i2})}\SI{50}{}=\SI{49,2}{} $$
 
+Como era de esperar $A_v$ casi no cambia.
+
+Calculamos el nuevo $R_O$
+$$R_O=R_C \parallel r_{o2}\bigg(1+\frac{\beta (R_E \parallel R_{ES})}{R_E \parallel R_{ES} +r_{\pi2}+R_{O1}}\bigg)\sim R_C$$
+
+se ve que no hay un cambio apreciable respecto al $R_O$ de la parte A.
 
 ##SIMULACIÓN
 
 ![Simulación de la amplificación con el circuito multietapa](img/ParteB_sim.jpg){width=70%}
 
-Vemos que se mantiene la amplificación.
+Vemos que se mantiene la amplificación. También verificamos que el $R_i$ es del orden de \SI{100}{\kilo\ohm}
+
+##MEDICIÓN
+
+![Medición con el circuito multietapa](img/ParteB_medicion.jpg){width=70%}
+
+Vimos que se mantiene la amplificación.
