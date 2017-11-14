@@ -49,17 +49,29 @@ Con $I_{CQ}=\SI{1}{\milli\ampere}$ tenemos que $I_{BQ}=\frac{I_{CQ}}{\beta}=\SI{
 
 Calculando los equivalentes de Thevenin de la red de polarización tengo que:
 
-$$V_{B_{TH}}=V_{CC}\frac{R_{B2}}{R_{B1}+R_{B2}}$$
+$$V_{B_{TH}}=V_{CC}\frac{R_{B1}}{R_{B1}+R_{B2}}$$
 $$R_{B_{TH}}=\frac{R_{B1}R_{B2}}{R_{B1}+R_{B2}}$$
 
 Viendo la malla de polarización:
 
-$$V_{B_{TH}}-V_{CC}=I_{BQ} R_{B_{TH}}- V_{BE} +I_{EQ} R_E$$
-$$V_{B_{TH}}-V_{CC}=I_{BQ} R_{B_{TH}}- V_{BE} +I_{EQ} R_E$$
-$$V_{B_{TH}}-V_{CC}+V_{BE}=I_{BQ} R_{B_{TH}} +(\beta+1)I_{BQ} R_E$$
-$$V_{CC}\bigg(\frac{R_{B2}}{R_{B1}+R_{B2}}-1\bigg)=I_{BQ}\bigg(\frac{R_{B1}R_{B2}}{R_{B1}+R_{B2}} +(\beta+1)R_E\bigg)-V_{BE}$$
+$$V_{CC}-V_{B_{TH}}=I_{BQ} R_{B_{TH}}- V_{BE} +I_{EQ} R_E$$
+$$V_{CC}-V_{B_{TH}}=I_{BQ} R_{B_{TH}}- V_{BE} +I_{EQ} R_E$$
+$$V_{CC}-V_{B_{TH}}+V_{BE}=I_{BQ} R_{B_{TH}} +(\beta+1)I_{BQ} R_E$$
+$$V_{CC}\bigg(1-\frac{R_{B2}}{R_{B1}+R_{B2}}\bigg)=I_{BQ}\bigg(\frac{R_{B1}R_{B2}}{R_{B1}+R_{B2}} +(\beta+1)R_E\bigg)-V_{BE}$$
 
 Reemplazando los valores de $I_{CQ}$, $\beta$ y $V_{BE}$ y tomando $R_E=\SI{1}{\kilo\ohm}$ por ser el más alto y darnos mayor estabilidad llegamos a:
 
-$$V_{CC}=\frac{R_{B1}+R_{B2}}{-R_{B2}} \Bigg(\SI{3,33}{\micro\ampere} \big(\frac{R_{B1}R_{B2}}{R_{B1}+R_{B2}} +\SI{301}{\kilo\ohm})-\SI{0.7}{\volt}\Bigg)$$
+$$V_{CC}=\frac{R_{B1}+R_{B2}}{R_{B2}} \Bigg(\SI{3,33}{\micro\ampere} \big(\frac{R_{B1}R_{B2}}{R_{B1}+R_{B2}} +\SI{301}{\kilo\ohm})+\SI{0.7}{\volt}\Bigg)$$
+
+Viendo la placa probamos primero con los valores más altos de $R_{B1}$ y $R_{B2}$:
+ $$R_{B1}=\SI{820}{\kilo\ohm}$$ 
+ $$R_{B2}=\SI{100}{\kilo\ohm}$$
+que nos deja:
+$$V_{CC}=\SI{18.39}{\volt}$$
+
+Con estos datos proponemos el circuito y simulamos:
+
+%![Circuito propuesto](img/ParteA_circuito.jpg)
+
+%![Resultados de la simulación](img/ParteA_sim.jpg)
 
