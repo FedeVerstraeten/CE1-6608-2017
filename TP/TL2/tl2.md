@@ -113,7 +113,33 @@ Nos tocó medir el $V_T$ de un transistor MOSFET.
 
 Fuimos aumentado V_{GS} de manera paulatina hasta encontrar el punto en que $V_{DS}$ comienza a caer. Ese valor de tensión es $V_T$.
 
-Así medimos un $V_T\=1.7V$
+Así medimos un $V_T=2.2V$
 
 #PARTE B
+
+Se nos pide agregar una etapa en CC entre el generador de señal y la etapa amplificadora bajo análisis. Proponemos un circuito ajustando los resistores de base para mantener los valores de reposo lo más parecidos posible.
+
+Vamos a referirnos como etapa 2 a la etapa original y como etapa 1 a la nueva etapa.
+
+![Circuito propuesto](img/ParteB_circuito.jpg){width=75%}
+
+*El valor de la corriente de reposo de la etapa agregada, para mantener inalterados (de ser posible) los valores de reposo de la etapa amplificadora original.*
+
+Viendo que la tensión en la base del emisor de la etapa original es $V_{B2}=V_{CC} - I_{CQ} R_{E2} - (-V_{BE2})$ y tomando en cuenta que $I_{CQ1}\gg I_{BQ2}$ tengo que $I_{R_{E1}}\sim I_{CQ1}$ y como la caida de tensión en $R_{E1}$ es $V_{CC}-V_{BQ2}$ voy a tener que 
+$$I_{CQ1}=\frac{V_{CC}-V_{BQ2}}{R_{E1}}=\SI{1,7}{\milli\ampere}$$
+
+*¿Cómo se modifica el equivalente Thèvenin del generador que excita a la etapa amplificadora original cuando se agrega la etapa seguidor?.*
+
+Dado que para un seguidor el $A_V\sim1$ tenemos que $V_{TH}$ del generador visto desde la etapa original se va a mantener prácticamente igual. Mientras que
+$$R_{TH}=R_{O1}=R_{E1}\parallel \bigg(\frac{r_\pi + R_{B11}\parallel R_{B21}\parallel R_S}{\beta+1} \bigg)$$
+
+
+
+*¿Cómo son los nuevos parámetros Ri, Ro y Av de esta etapa con dostransistores respecto a los obtenidos en la etapa original bajo estudio?.*
+
+
+
+##SIMULACIÓN
+
+![Simulación de la amplificación con el circuito multietapa](img/ParteB_sim.jpg){width=70%}
 
