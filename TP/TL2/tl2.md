@@ -116,7 +116,7 @@ Nos tocó medir el $V_T$ de un transistor MOSFET.
 
 Fuimos aumentado V_{GS} de manera paulatina hasta encontrar el punto en que $V_{DS}$ comienza a caer. Ese valor de tensión es $V_T$.
 
-Así medimos un $V_T=2.2V$
+Así medimos un $V_T=\SI{2,2}{\volt}$
 
 #PARTE B
 
@@ -163,3 +163,4 @@ Vemos que se mantiene la amplificación. También verificamos que el $R_i$ es de
 ![Medición con el circuito multietapa](img/ParteB_medicion.jpg){width=70%}
 
 Vimos que se mantiene la amplificación.
+
