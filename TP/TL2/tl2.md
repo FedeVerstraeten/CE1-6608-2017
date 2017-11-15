@@ -1,5 +1,5 @@
 
-#Parte A) \underline{ETAPA AMPLIFICADORA CON UN TRANSISTOR}
+#A) \underline{ETAPA AMPLIFICADORA CON UN TRANSISTOR}
 
 Consigna:
 
@@ -114,11 +114,11 @@ Nos tocó medir el $V_T$ de un transistor MOSFET.
 
 ![Banco de medición para medir $V_T$](img/ParteA_MedicionVT.jpg){width=70%}
 
-Fuimos aumentado V_{GS} de manera paulatina hasta encontrar el punto en que $V_{DS}$ comienza a caer. Ese valor de tensión es $V_T$.
+Fuimos aumentado $V_{GS}$ de manera paulatina hasta encontrar el punto en que $V_{DS}$ comienza a caer. Ese valor de tensión es $V_T$.
 
 Así medimos un $V_T=\SI{2,2}{\volt}$
 
-#PARTE B
+#B) \underline{ETAPA AMPLIFICADORA CON DOS TRANSISTORES}
 
 Se nos pide agregar una etapa en CC entre el generador de señal y la etapa amplificadora bajo análisis. Proponemos un circuito ajustando los resistores de base para mantener los valores de reposo lo más parecidos posible.
 
