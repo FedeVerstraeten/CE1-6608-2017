@@ -1,22 +1,20 @@
 Circuit: * C:\users\fverstra\My Documents\Repository\CE1-6608-2017\TP\TL2\simul\parteD.asc
 
-Direct Newton iteration for .op point succeeded.
 
-Date: Fri Nov 10 00:20:27 2017
-Total elapsed time: 0.041 seconds.
+Date: Tue Nov 14 09:36:01 2017
+Total elapsed time: 0.029 seconds.
 
 tnom = 27
 temp = 27
-method = modified trap
-totiter = 1605
-traniter = 1598
-tranpoints = 577
-accept = 430
-rejected = 147
+method = trap
+totiter = 50
+traniter = 0
+tranpoints = 0
+accept = 0
+rejected = 0
 matrix size = 7
 fillins = 2
 solver = Normal
-Matrix Compiler1: 508 bytes object code size  0.5/0.5/[0.3]
-Matrix Compiler2: 603 bytes object code size  0.4/0.4/[0.3]
-
+Matrix Compiler1: 508 bytes object code size
+Matrix Compiler2: 603 bytes object code size
 
